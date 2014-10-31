@@ -1,6 +1,8 @@
 class EmailMailer < ActionMailer::Base
   default from: "alessandro@alessandrostein.com"
 
+  layout 'application'
+
   def welcome_email(email)
     @email = email
     @url = 'www.alessandrostein.com'

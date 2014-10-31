@@ -13,5 +13,9 @@
       To login to the site, just follow this link: <%= @url %>.
     </p>
     <p>Thanks for joining and have a great day!</p>
+
+    <!-- <%= url_for(controller: 'emails', action: 'index', only_path: false) %> -->
+    <!--<%= url_for(host: 'localhost:3000', controller: 'emails', action: 'index') %> -->
+    <%= email_url(@email, host: 'localhost:3000') %>
   </body>
 </html>
