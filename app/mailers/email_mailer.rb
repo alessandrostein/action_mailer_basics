@@ -9,6 +9,14 @@ class EmailMailer < ActionMailer::Base
     mail(to: @email.to, subject: @email.subject)
   end
 
+  def welcome_attachments(email)
+    attachments.inline['image.jpg'] = File.read('/home/alessandrostein/Imagens/download.jpg')
+
+    @email = email
+    @url = 'www.alessandrostein.com'
+    mail(to: @email.to, subject: @email.subject)
+  end
+
   def protect_against_forgery?
       false
   end
