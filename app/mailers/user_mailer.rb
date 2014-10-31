@@ -1,12 +1,11 @@
 class UserMailer < ActionMailer::Base
   default from: "alessandro@alessandrostein.com"
 
-  layout 'awesome'
+  #layout 'awesome'
 
-  def welcome_email(user, email_body)
-    mail(to: user.email,
-      body: email_body,
-      content_type: "text/html",
+  def welcome_email(user)
+    @user = user
+    mail(to: @user.email,
       subject: "Already rendered!")
   end
 
